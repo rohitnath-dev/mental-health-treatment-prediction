@@ -100,19 +100,22 @@ If you run the Streamlit app locally, update the model path in the app configura
 - Assumes categorical and ordinal feature mappings are stable — if the dataset changes you must update encoders and retrain.
 - Privacy and ethics: if you use real survey data, ensure consent and appropriate anonymization.
 
-mental-health-treatment-prediction/
+## Folder structure
+
+```text
+Mental-health-treatment-prediction/
 │
-├── Mental_Health_Prediction.ipynb   # Data preprocessing, training & evaluation
-├── app.py                           # Streamlit web application
-├── README.md                        # Project documentation
+├── Mental_Health_Prediction.ipynb  # Data analysis and model training notebook
+├── app.py                          # Streamlit/Flask application script
+├── README.md                       # Project documentation
 │
-├── preprocessors/                   # Saved encoders / helpers
-│   ├── ordinal_encoder.pkl
-│   ├── label_encoders.pkl
-│   └── feature_columns.pkl
+├── preprocessors/                  # Folder containing saved preprocessing objects
+│   ├── ordinal_encoder.pkl         # Saved Ordinal Encoder for categorical features
+│   ├── label_encoders.pkl          # Saved Label Encoders for target/features
+│   └── feature_columns.pkl         # List of columns used during training
 │
-└── (model file not included)
-    mental_health_model.pkl           # Trained model (~350MB, stored in Google Drive)
+└── mental_health_model.pkl (model file not included)    # Trained machine learning model
+```
 
 ## How to run (short)
 1. Create a Python environment (recommended):
